@@ -61,10 +61,10 @@ This team has come together to complete the requirements for ITC515 with the fol
 * agendas and minutes to be stored on GitHub
 * TODO items will be captured in Trello
 
-###### Here is how we expect to resolve conflicts
+##### Here is how we expect to resolve conflicts
 
 * talk first...if there is persistent or damaging disagreement then go to the professor 
 
-###### Reflection
+##### Reflection
 
 * we plan to reflect on performance after each assignment milestone
