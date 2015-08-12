@@ -327,7 +327,8 @@ public class cgUI extends javax.swing.JFrame
     try {
       String s = ctl.checkGrade(f1, f2, f3);
       jLabel5.setText(s);
-    } catch (RuntimeException re) {
+    } 
+    catch (RuntimeException re) {
       jlabel6.setText(re.getMessage());
     }
   }// GEN-LAST:event_jButton3ActionPerformed
@@ -360,7 +361,8 @@ public class cgUI extends javax.swing.JFrame
     try {
       ctl.saveGrade(asg1, asg2, exam);
       // jButton3ActionPerformed(null);
-    } catch (RuntimeException re) {
+    } 
+    catch (RuntimeException re) {
       jlabel6.setText(re.getMessage());
     }
   }// GEN-LAST:event_jButton2ActionPerformed

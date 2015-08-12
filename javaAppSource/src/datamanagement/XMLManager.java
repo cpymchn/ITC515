@@ -36,7 +36,8 @@ public class XMLManager
       SAXBuilder b = new SAXBuilder();
       b.setExpandEntities(true);
       doc = b.build(s);
-    } catch (JDOMException e) {
+    } 
+    catch (JDOMException e) {
       System.err.printf("%s",
           "DBMD: XMLManager : init : caught JDOMException\n");
       throw new RuntimeException("DBMD: XMLManager : init : JDOMException");
