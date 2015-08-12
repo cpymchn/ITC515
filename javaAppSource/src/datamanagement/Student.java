@@ -62,10 +62,11 @@ public class Student
 
   public IStudentUnitRecord getUnitRecord(String unitCode)
   {
-    for (IStudentUnitRecord r : su)
+    for (IStudentUnitRecord r : su){
       if (r.getUnitCode().equals(unitCode))
         return r;
-    return null;
+    }
+      return null;
   }
 
 
