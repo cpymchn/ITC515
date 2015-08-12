@@ -1,5 +1,6 @@
 package datamanagement;
-public class UnitProxy implements IUnit
+public class UnitProxy
+  implements IUnit
 {
   private String UC;
   private String un;

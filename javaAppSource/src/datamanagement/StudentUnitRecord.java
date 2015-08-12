@@ -1,5 +1,6 @@
 package datamanagement;
-public class StudentUnitRecord implements IStudentUnitRecord
+public class StudentUnitRecord
+  implements IStudentUnitRecord
 {
   private Integer sid;
   private String  uc;

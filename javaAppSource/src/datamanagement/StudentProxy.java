@@ -1,5 +1,6 @@
 package datamanagement;
-public class StudentProxy implements IStudent
+public class StudentProxy
+  implements IStudent
 {
   private Integer        I;
   private String         l;
