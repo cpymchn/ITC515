@@ -21,6 +21,7 @@ IStudent is = sm.get(id);
     return is != null ? is : createStudent(id);
     }
 
+@SuppressWarnings("unchecked")
 private Element getStudentElement(Integer id) {
         for (Element el : (List<Element>) XMLManager.getXML().getDocument().getRootElement().getChild("studentTable").getChildren("student")) 
             if (id.toString().equals(el.getAttributeValue("sid"))) 

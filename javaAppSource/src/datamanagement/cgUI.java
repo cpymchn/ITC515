@@ -5,14 +5,16 @@ import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.Font;
 import java.awt.Color;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 
 public class cgUI extends javax.swing.JFrame implements IUnitLister,
 		IStudentLister {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private cgCTL ctl;
-	private javax.swing.DefaultComboBoxModel uM;
-	private javax.swing.DefaultComboBoxModel rM;
+	private javax.swing.DefaultComboBoxModel<String> uM;
+	private javax.swing.DefaultComboBoxModel<String> rM;
 	float f1;
 	float f2;
 	float f3;
@@ -20,8 +22,8 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 
 	public cgUI(cgCTL ctl) {
 		this.ctl = ctl;
-		uM = new javax.swing.DefaultComboBoxModel(new String[0]);
-		rM = new javax.swing.DefaultComboBoxModel(new String[0]);
+		uM = new javax.swing.DefaultComboBoxModel<String>(new String[0]);
+		rM = new javax.swing.DefaultComboBoxModel<String>(new String[0]);
 		initComponents();
 		jComboBox1.setModel(uM);
 		jComboBox2.setModel(rM);
@@ -39,9 +41,9 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 
 		jLabel1 = new javax.swing.JLabel();
 		jPanel1 = new javax.swing.JPanel();
-		jComboBox1 = new javax.swing.JComboBox();
+		jComboBox1 = new javax.swing.JComboBox<String>();
 		jPanel2 = new javax.swing.JPanel();
-		jComboBox2 = new javax.swing.JComboBox();
+		jComboBox2 = new javax.swing.JComboBox<String>();
 		jPanel3 = new javax.swing.JPanel();
 		jLabel2 = new javax.swing.JLabel();
 		jLabel3 = new javax.swing.JLabel();
@@ -305,7 +307,7 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 		Refresh3();
 		clearStudents();
 		if (evt.getStateChange() == java.awt.event.ItemEvent.SELECTED) {
-			if (cU.equals((String) jComboBox1.getItemAt(0))) {
+			if (cU.equals(jComboBox1.getItemAt(0))) {
 				cU = "NONE";
 			}
 			ctl.unitSelected(cU);
@@ -316,7 +318,7 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 		Refresh3();
 		String cS = (String) jComboBox2.getSelectedItem();
 		if (evt.getStateChange() == java.awt.event.ItemEvent.SELECTED) {
-			if (cS.equals((String) jComboBox2.getItemAt(0))) {
+			if (cS.equals(jComboBox2.getItemAt(0))) {
 				sid = new Integer(0);
 				ctl.studentSelected(sid);
 			} else {
@@ -436,8 +438,8 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 	private javax.swing.JButton jButton1;
 	private javax.swing.JButton jButton2;
 	private javax.swing.JButton jButton3;
-	private javax.swing.JComboBox jComboBox1;
-	private javax.swing.JComboBox jComboBox2;
+	private javax.swing.JComboBox<String> jComboBox1;
+	private javax.swing.JComboBox<String> jComboBox2;
 	private javax.swing.JLabel jLabel1;
 	private javax.swing.JLabel jLabel2;
 	private javax.swing.JLabel jLabel3;

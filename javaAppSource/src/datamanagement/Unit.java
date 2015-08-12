@@ -126,29 +126,6 @@ public class Unit implements IUnit {
 		this.ex = ex;			
 	}
 	
-	private void setCutoffs( float ps, float cr, float di, float hd, float ae) {
-		if (ps < 0 || ps > 100 ||
-			cr < 0 || cr > 100 ||
-			di < 0 || di > 100 ||
-			hd < 0 || hd > 100 ||
-			ae < 0 || ae > 100 ) {
-			throw new RuntimeException("Assessment cutoffs cant be less than zero or greater than 100");
-		}
-		if (ae >= ps) {
-			throw new RuntimeException("AE cutoff must be less than PS cutoff");
-		}
-		if (ps >= cr) {
-			throw new RuntimeException("PS cutoff must be less than CR cutoff");
-		}
-		if (cr >= di) {
-			throw new RuntimeException("CR cutoff must be less than DI cutoff");
-		}
-		if (di >= hd) {
-			throw new RuntimeException("DI cutoff must be less than HD cutoff");
-		}
-
-	}
-	
 	public String getGrade(float f1, float f2, float f3) {
 		float t = f1 + f2 + f3;
 		

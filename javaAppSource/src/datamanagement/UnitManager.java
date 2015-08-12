@@ -25,6 +25,7 @@ public class UnitManager {
 
 	}
 
+	@SuppressWarnings("unchecked")
 	private IUnit createUnit(String unitCode) {
 
 		IUnit iu;
@@ -32,9 +33,6 @@ public class UnitManager {
 		for (Element el : (List<Element>) XMLManager.getXML().getDocument()
 				.getRootElement().getChild("unitTable").getChildren("unit"))
 			if (unitCode.equals(el.getAttributeValue("uid"))) {
-				StudentUnitRecordList slist;
-
-				slist = null;
 				iu = new Unit(el.getAttributeValue("uid"),
 						el.getAttributeValue("name"), Float.valueOf(
 								el.getAttributeValue("ps")).floatValue(), Float
@@ -57,6 +55,7 @@ public class UnitManager {
 		throw new RuntimeException("DBMD: createUnit : unit not in file");
 	}
 
+	@SuppressWarnings("unchecked")
 	public UnitMap getUnits() {
 
 		UnitMap uM;
