@@ -195,7 +195,8 @@ public class Unit
     }
     if (t < co5) {
       return "FL";
-    } else if (t < co2)
+    }
+    else if (t < co2)
       return "AE";
     else if (t < co1)
       return "PS";

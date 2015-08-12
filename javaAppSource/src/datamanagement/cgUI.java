@@ -308,7 +308,8 @@ public class cgUI extends javax.swing.JFrame
       if (cS.equals(jComboBox2.getItemAt(0))) {
         sid = new Integer(0);
         ctl.studentSelected(sid);
-      } else {
+      }
+      else {
         sid = new Integer(cS.split("\\s")[0]);
       }
       ctl.studentSelected(sid);

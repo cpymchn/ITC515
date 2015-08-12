@@ -55,7 +55,8 @@ public class cgCTL
       CGUI.setState4(false);
       CGUI.setState5(false);
       CGUI.setState6(false);
-    } else {
+    } 
+    else {
       IStudent s = StudentManager.get().getStudent(id);
       IStudentUnitRecord r = s.getUnitRecord(cuc);
       CGUI.setRecord(r);
