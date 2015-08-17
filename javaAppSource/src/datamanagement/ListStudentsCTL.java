@@ -1,12 +1,12 @@
 package datamanagement;
 public class ListStudentsCTL
 {
-  private StudentManager sm;
+  private StudentManager studentManager_;								//	fixed variable names
 
 
 
   public ListStudentsCTL() {
-    sm = StudentManager.get();
+	  this.studentManager_ = StudentManager.get();								//	fixed variable names
   }
 
 
@@ -14,7 +14,7 @@ public class ListStudentsCTL
   public void listStudents(IStudentLister lister, String unitCode)
   {
     lister.clearStudents();
-    StudentMap students = sm.getStudentsByUnit(unitCode);
+    StudentMap students = this.studentManager_.getStudentsByUnit(unitCode);								//	fixed variable names
     for (Integer id : students.keySet()) {
       lister.addStudent(students.get(id));
     }

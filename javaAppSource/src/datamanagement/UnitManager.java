@@ -4,7 +4,7 @@ import org.jdom.*;
 public class UnitManager
 {
   private static UnitManager self = null;
-  private UnitMap            UM;
+  private UnitMap            unitMap;
 
 
 

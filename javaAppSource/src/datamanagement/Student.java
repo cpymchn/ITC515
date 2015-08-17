@@ -2,69 +2,69 @@ package datamanagement;
 public class Student 
   implements IStudent
 {
-  private Integer               id;
-  private String                fn;
-  private String                ln;
-  private StudentUnitRecordList su;
+  private Integer               studentID_;     // change variable name
+  private String                firstName_;     // change variable name
+  private String                lastName_;     // change variable name
+  private StudentUnitRecordList studentRecordUnitList_;     // change variable name
 
 
 
-  public Student(Integer id, String fn, String ln, StudentUnitRecordList su) {
-    this.id = id;
-    this.fn = fn;
-    this.ln = ln;
-    this.su = su == null ? new StudentUnitRecordList() : su;
+  public Student(Integer studentID, String fn, String lastName, StudentUnitRecordList studentRecordUnitList) {
+    this.studentID_ = studentID;     // change variable name
+    this.firstName_ = firstName;     // change variable name
+    this.lastName_ = lastName;     // change variable name
+    this.studentRecordUnitList_ = studentRecordUnitList == null ? new StudentUnitRecordList() : studentRecordUnitList;
   }
 
 
 
   public Integer getID()
   {
-    return this.id;
+    return this.studentID_;     // change variable name
   }
 
 
 
   public String getFirstName()
   {
-    return fn;
+    return this.firstName_;     // change variable name
   }
 
 
 
   public void setFirstName(String firstName)
   {
-    this.fn = firstName;
+    this.firstName_ = firstName;     // change variable name
   }
 
 
 
   public String getLastName()
   {
-    return ln;
+    return this.lastName_;     // change variable name
   }
 
 
 
   public void setLastName(String lastName)
   {
-    this.ln = lastName;
+    this.lastName_ = lastName;     // change variable name
   }
 
 
 
-  public void addUnitRecord(IStudentUnitRecord record)
+  public void addUnitRecord(IStudentUnitRecord record)     // change variable name
   {
-    su.add(record);
+	this.studentRecordUnitList_.add(record);     // change variable name
   }
 
 
 
-  public IStudentUnitRecord getUnitRecord(String unitCode)
+  public IStudentUnitRecord getUnitRecord(String unitCode)     // change variable name
   {
-    for (IStudentUnitRecord r : su){
-      if (r.getUnitCode().equals(unitCode))
-        return r;
+    for (IStudentUnitRecord record : studentRecordUnitList_){     // change variable name
+      if (record.getUnitCode().equals(unitCode))     // change variable name
+        return record;     // change variable name
     }
       return null;
   }
@@ -73,6 +73,6 @@ public class Student
 
   public StudentUnitRecordList getUnitRecords()
   {
-    return su;
+    return this.studentRecordUnitList_;       // change variable name
   }
 }

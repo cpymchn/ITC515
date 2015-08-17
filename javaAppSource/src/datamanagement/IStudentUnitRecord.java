@@ -9,19 +9,19 @@ public interface IStudentUnitRecord
 
 
 
-  public void setAsg1(float mark);
+  public void setAssignmentGrade1(float mark);		//Fixed method name
 
 
 
-  public float getAsg1();
+  public float getAssignmentGrade1();				//Fixed method name
 
 
 
-  public void setAsg2(float mark);
+  public void setAssignmentGrade2(float mark);		//Fixed method name
 
 
 
-  public float getAsg2();
+  public float getAssignmentGrade2();				//Fixed method name
 
 
 

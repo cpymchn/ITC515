@@ -3,31 +3,31 @@ import org.jdom.*;
 import java.util.List;
 public class StudentManager
 {
-  private static StudentManager                 self = null;
-  private StudentMap                            sm;
-  private java.util.HashMap<String, StudentMap> um;
+  private static StudentManager                 self_ = null;
+  private StudentMap                            studentMap_;
+  private java.util.HashMap<String, StudentMap> hashMap_;
 
 
 
   public static StudentManager get()
   {
-    if (self == null)
-      self = new StudentManager();
-    return self;
+    if (self_ == null)
+      self_ = new StudentManager();
+    return self_;
   }
 
 
 
   private StudentManager() {
-    sm = new StudentMap();
-    um = new java.util.HashMap<>();
+    this.studentMap_ = new StudentMap();
+    this.hashMap_ = new java.util.HashMap<>();
   }
 
 
 
   public IStudent getStudent(Integer id)
   {
-    IStudent is = sm.get(id);
+    IStudent is = this.hashMap_.get(id);
     return is != null ? is : createStudent(id);
   }
 
@@ -76,7 +76,7 @@ public class StudentManager
 
   public StudentMap getStudentsByUnit(String uc)
   {
-    StudentMap s = um.get(uc);
+    StudentMap s = this.hashMap_.get(uc);
     if (s != null) {
       return s;
     }
@@ -88,7 +88,7 @@ public class StudentManager
       is = createStudentProxy(new Integer(S.getStudentID()));
       s.put(is.getID(), is);
     }
-    um.put(uc, s);
+    this.hashMap_.put(uc, s);
     return s;
   }
 }

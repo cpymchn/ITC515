@@ -2,60 +2,60 @@ package datamanagement;
 public class StudentProxy
   implements IStudent
 {
-  private Integer        I;
-  private String         l;
-  private String         Il;
-  private StudentManager lI;
+  private Integer        studentID_;
+  private String         firstName_;
+  private String         lastName_;
+  private StudentManager studentManager_;
 
 
 
-  public StudentProxy(Integer id, String fn, String Il) {
-    this.I = id;
-    this.l = fn;
-    this.Il = Il;
-    this.lI = StudentManager.get();
+  public StudentProxy(Integer studentID, String firstName, String lastName) {
+    this.studentID_ = studentID;
+    this.firstName_ = firstName;
+    this.lastName_ = lastName;
+    this.studentManager_ = StudentManager.get();
   }
 
 
 
   public Integer getID()
   {
-    return I;
+    return this.studentID_;
   }
 
 
 
   public String getFirstName()
   {
-    return l;
+    return this.firstName_;
   }
 
 
 
   public String getLastName()
   {
-    return Il;
+    return this.lastName_;
   }
 
 
 
   public void setFirstName(String firstName)
   {
-    lI.getStudent(I).setFirstName(firstName);
+    this.studentManager_.getStudent(this.studentID_).setFirstName(firstName);
   }
 
 
 
   public void setLastName(String lastName)
   {
-    lI.getStudent(I).setLastName(lastName);
+	  this.studentManager_.getStudent(this.studentID_).setLastName(lastName);
   }
 
 
 
   public void addUnitRecord(IStudentUnitRecord record)
   {
-    lI.getStudent(I).addUnitRecord(record);
+	  this.studentManager_.getStudent(this.studentID_).addUnitRecord(record);
   }
 
 

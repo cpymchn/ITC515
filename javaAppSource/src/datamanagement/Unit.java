@@ -2,161 +2,154 @@ package datamanagement;
 public class Unit
   implements IUnit
 {
-  private String                uc;
-  private String                UN;
-  private float                 co2;
-  private float                 co1;
-  private float                 co4;
-  private float                 co3;
-  private float                 co5;
-  private int                   a1, a2, ex;
-  private StudentUnitRecordList rs;
+  private String                unitCode_;
+  private String                unitName_;
+  private float                 passCutoff_;
+  private float                 creditCutoff_;
+  private float                 distinctionCutoff_;
+  private float                 highDistinctionCutoff_;
+  private float                 co5_;  // this is for AE?? what does that mean
+  private int                   assignment1Weight_, assignment2Weight_, exam_;
+  private StudentUnitRecordList recordList_;
 
 
 
-  public Unit(String UC, String un, float f1, float f2, float f3, float f4,
-      float f5, int i1, int i2, int i3, StudentUnitRecordList rl) {
-    uc = UC;
-    UN = un;
-    co2 = f1;
-    co1 = f2;
-    this.co4 = f3;
-    co3 = f4;
-    this.co5 = f5;
-    this.setAssessmentWeights(i1, i2, i3);
-    rs = rl == null ? new StudentUnitRecordList() : rl;
+  public Unit(String untiCode, String unitName, float passCutoff, float creditCutoff, float distinctionCutoff, float highDistinctionCutoff,
+      float f5, int assignment1Weight, int assignment1Weight, int exam, StudentUnitRecordList recordList) {
+	this.unitCode_ = unitCode;																	//	fixed variable names
+	this.unitName_ = unitName;																	//	fixed variable names
+    this.passCutoff_ = passCutoff;																//	fixed variable names
+    this.creditCutoff_ = creditCutoff;															//	fixed variable names
+    this.distinctionCutoff_ = distinctionCutoff;													//	fixed variable names
+    this.highDistinctionCutoff_ = highDistinctionCutoff;											//	fixed variable names
+    this.co5_ = f5;
+    this.setAssessmentWeights(assignment1Weight, assignment1Weight, exam);						//	fixed variable names
+    this.recordList_ = recordList == null ? new StudentUnitRecordList() : recordList				//	fixed variable names
   }
 
 
 
   public String getUnitCode()
   {
-    return this.uc;
+    return this.unitCode_;																					//	fixed variable names
   }
 
 
 
   public String getUnitName()
   {
-    return this.UN;
+    return this.unitName_;																//	fixed variable names
   }
 
 
 
-  public void setPsCutoff1(float cutoff)
+  public void setPassCutoff(float cutoff)
   {
-    this.co2 = cutoff;
+    this.passCutoff_ = cutoff;																//	fixed variable names
   }
 
 
 
-  public float getPsCutoff()
+  public float getPassCutoff()
   {
-    return this.co2;
+    return this.passCutoff_;																//	fixed variable names
   }
 
 
 
-  public void setCrCutoff(float cutoff)
+  public void setCreditCutoff(float cutoff)
   {
-    this.co1 = cutoff;
+    this.creditCutoff_ = cutoff;																//	fixed variable names
   }
 
 
 
-  public float getCrCutoff()
+  public float getCreditCutoff()
   {
-    return this.co1;
+    return this.creditCutoff_;																//	fixed variable names
   }
 
 
 
-  public void setDiCutoff(float cutoff)
+  public void setDistinctionCutoff(float cutoff)
   {
-    this.co4 = cutoff;
+    this.distinctionCutoff_ = cutoff;																//	fixed variable names
   }
 
 
 
-  public float getDiCuttoff()
+  public float getDistinctionCuttoff()
   {
-    return this.co4;
+    return this.distinctionCutoff_;																//	fixed variable names
   }
 
 
 
-  public void HDCutoff(float cutoff)
+  public void setHighDistinctionCutoff(float cutoff)
   {
-    this.co3 = cutoff;
+    this.highDistinctionCutoff_ = cutoff;																//	fixed variable names
   }
 
 
 
-  public void setHdCutoff(float cutoff)
+  public float getHighDistinctionCutoff()
   {
-    this.co3 = cutoff;
-  }
-
-
-
-  public float getHdCutoff()
-  {
-    return this.co3;
+    return this.highDistinctionCutoff_;																//	fixed variable names
   }
 
 
 
   public void setAeCutoff(float cutoff)
   {
-    this.co5 = cutoff;
+    this.co5_ = cutoff;																//	to do
   }
 
 
 
   public float getAeCutoff()
   {
-    return this.co5;
+    return this.co5_;
   }
 
 
 
   public void addStudentRecord(IStudentUnitRecord record)
   {
-    rs.add(record);
+	  this.recordList_.add(record);									//	fixed variable names
   }
 
 
 
-  public IStudentUnitRecord getStudentRecord(int studentID)
+  public IStudentUnitRecord getStudentRecord(int studentID)								//	fixed variable names
   {
-    for (IStudentUnitRecord r : rs) {
-      if (r.getStudentID() == studentID)
-        return r;
+    for (IStudentUnitRecord record : this.recordList_) {								//	fixed variable names
+      if (record.getStudentID() == studentID)								//	fixed variable names
+        return record;								//	fixed variable names
     }
     return null;
   }
 
 
 
-  public StudentUnitRecordList listStudentRecords()
+  public StudentUnitRecordList listStudentRecords()								//	fixed variable names
   {
-    return rs;
+    return this.recordList_;								//	fixed variable names
   }
 
 
 
   @Override
-  public int getAsg1Weight()
+  public int getAssignment1Weight()
   {
-    return a1;
+    return this.assignment1Weight_;								//	fixed variable names
   }
 
 
 
   @Override
-  public int getAsg2Weight()
+  public int getAssignmentg2Weight()
   {
-    return a2;
+    return this.assignment2Weight_;								//	fixed variable names
   }
 
 
@@ -164,45 +157,45 @@ public class Unit
   @Override
   public int getExamWeight()
   {
-    return ex;
+    return this.exam_;								//	fixed variable names
   }
 
 
 
   @Override
-  public void setAssessmentWeights(int a1, int a2, int ex)
+  public void setAssessmentWeights(int assignment1Weight, int assignment2Weight, int exam)								//	fixed variable names
   {
-    if (a1 < 0 || a1 > 100 || a2 < 0 || a2 > 100 || ex < 0 || ex > 100) {
+    if (assignment1Weight < 0 || assignment1Weight > 100 || assignment2Weight < 0 || assignment2Weight > 100 || exam < 0 || exam > 100) {								//	fixed variable names
       throw new RuntimeException(
           "Assessment weights cant be less than zero or greater than 100");
     }
-    if (a1 + a2 + ex != 100) {
+    if (assignment1Weight + assignment2Weight + exam != 100) {								//	fixed variable names
       throw new RuntimeException("Assessment weights must add to 100");
     }
-    this.a1 = a1;
-    this.a2 = a2;
-    this.ex = ex;
+    this.assignment1Weight_ = assignment1Weight;								//	fixed variable names
+    this.assignment2Weight_ = assignment2Weight;								//	fixed variable names
+    this.exam_ = exam;								//	fixed variable names
   }
 
 
 
-  public String getGrade(float f1, float f2, float f3)
+  public String getGrade(float assignment1Mark, float assignment2Mark, float exam) //Need to check this LOGIC think I stuffed it when changing variable names
   {
-    float t = f1 + f2 + f3;
-    if (f1 < 0 || f1 > a1 || f2 < 0 || f2 > a2 || f3 < 0 || f3 > ex) {
+    float totalMark = assignment1Mark + assignment2Mark + exam;
+    if (assignment1Mark < 0 || assignment1Mark > assignment1Weight || assignment2Mark < 0 || assignment2Mark > this.assignment2Weight || exam < 0 || exam > this.exam) {
       throw new RuntimeException(
           "marks cannot be less than zero or greater than assessment weights");
     }
-    if (t < co5) {
+    if (totalMark < co5_) {
       return "FL";
     }
-    else if (t < co2)
+    else if (totalMark < this.passCutoff_)								//	fixed variable names
       return "AE";
-    else if (t < co1)
+    else if (totalMark < this.creditCutoff_)								//	fixed variable names
       return "PS";
-    else if (t < co4)
+    else if (totalMark < this.distinctionCutoff_)								//	fixed variable names
       return "CR";
-    else if (t < co3)
+    else if (totalMark < this.highDistinctionCutoff_)								//	fixed variable names
       return "DI";
     else
       return "HD";

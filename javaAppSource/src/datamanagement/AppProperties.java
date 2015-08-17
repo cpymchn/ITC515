@@ -4,7 +4,7 @@ import java.io.*;
 public class AppProperties
 {
   private static AppProperties self = null;
-  private Properties           properties;
+  private Properties           properties_;
 
 
 
@@ -19,9 +19,9 @@ public class AppProperties
 
 
   private AppProperties() {
-    properties = new Properties();
+    this.properties_ = new Properties();
     try {
-      properties.load(new FileInputStream("Properties.prop"));
+      this.properties_.load(new FileInputStream("Properties.prop"));
     }
     catch (IOException e) {
       throw new RuntimeException("Could not read property file");
@@ -32,6 +32,6 @@ public class AppProperties
 
   public Properties getProperties()
   {
-    return properties;
+    return this.properties_;
   }
 }

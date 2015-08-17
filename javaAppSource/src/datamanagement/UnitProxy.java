@@ -2,155 +2,155 @@ package datamanagement;
 public class UnitProxy
   implements IUnit
 {
-  private String UC;
-  private String un;
-  UnitManager    um;
+  private String unitCode_;
+  private String unitName_;
+  UnitManager    unitManager_;
 
 
 
   public UnitProxy(String unitCode, String unitName) {
-    this.UC = unitCode;
-    this.un = unitName;
-    um = UnitManager.UM();
+    this.unitCode_ = unitCode;
+    this.unitName_ = unitName;
+    this.unitManager_ = UnitManager.UM();
   }
 
 
 
   public String getUnitCode()
   {
-    return this.UC;
+    return this.unitCode_;
   }
 
 
 
   public String getUnitName()
   {
-    return this.un;
+    return this.unitName_;
   }
 
 
 
-  public void setPsCutoff1(float cutoff)
+  public void setPassCutoff(float cutoff)
   {
-    um.getUnit(UC).setPsCutoff1(cutoff);
+	this.unitManager_ .getUnit(this.unitCode_).setPassCutoff(cutoff);
   }
 
 
 
-  public float getPsCutoff()
+  public float getCreditCutoff()
   {
-    return um.getUnit(UC).getPsCutoff();
+    return this.unitManager_ .getUnit(this.unitCode_).getCreditCutoff();
   }
 
 
 
-  public void setCrCutoff(float cutoff)
+  public void setCreditCutoff(float cutoff)
   {
-    um.getUnit(UC).setCrCutoff(cutoff);
+	this.unitManager_ .getUnit(this.unitCode_).setCreditCutoff(cutoff);
   }
 
 
 
-  public float getCrCutoff()
+  public float getCreditCutoff()
   {
-    return um.getUnit(UC).getCrCutoff();
+    return um.getUnit(this.unitCode_).getCreditCutoff();
   }
 
 
 
-  public void setDiCutoff(float cutoff)
+  public void setDistinctionCutoff(float cutoff)
   {
-    um.getUnit(UC).setDiCutoff(cutoff);
+	  this.unitManager_.getUnit(this.unitCode_).setDistinctionCutoff(cutoff);
   }
 
 
 
-  public float getDiCuttoff()
+  public float getDistinctionCuttoff()
   {
-    return um.getUnit(UC).getDiCuttoff();
+    return this.unitManager_.getUnit(this.unitCode_).getDistinctionCuttoff();
   }
 
 
 
-  public void setHdCutoff(float cutoff)
+  public void setHighDistinctionCutoff(float cutoff)
   {
-    um.getUnit(UC).setHdCutoff(cutoff);
+	  this.unitManager_.getUnit(this.unitCode_).setHighDistinctionCutoff(cutoff);
   }
 
 
 
-  public float getHdCutoff()
+  public float getHighDistinctionCutoff()
   {
-    return um.getUnit(UC).getHdCutoff();
+    return this.unitManager_.getUnit(this.unitCode_).getHighDistinctionCutoff();
   }
 
 
 
   public void setAeCutoff(float cutoff)
   {
-    um.getUnit(UC).setAeCutoff(cutoff);
+	  this.unitManager_.getUnit(this.unitCode_).setAeCutoff(cutoff);
   }
 
 
 
   public float getAeCutoff()
   {
-    return um.getUnit(UC).getAeCutoff();
+    return this.unitManager_.getUnit(this.unitCode_).getAeCutoff();
   }
 
 
 
-  public String getGrade(float f1, float f2, float f3)
+  public String getGrade(float assignmentGrade1, float assignmentGrade2, float exam)
   {
-    return um.getUnit(UC).getGrade(f1, f2, f3);
+    return this.unitManager_.getUnit(this.unitCode_).getGrade(assignmentGrade1, assignmentGrade2, exam);
   }
 
 
 
   public void addStudentRecord(IStudentUnitRecord record)
   {
-    um.getUnit(UC).addStudentRecord(record);
+	  this.unitManager_.getUnit(this.unitCode_).addStudentRecord(record);
   }
 
 
 
   public IStudentUnitRecord getStudentRecord(int s)
   {
-    return um.getUnit(UC).getStudentRecord(s);
+    return this.unitManager_.getUnit(this.unitCode_).getStudentRecord(s);
   }
 
 
 
   public StudentUnitRecordList listStudentRecords()
   {
-    return um.getUnit(UC).listStudentRecords();
+    return this.unitManager_.getUnit(this.unitCode_).listStudentRecords();
   }
 
 
 
-  public int getAsg1Weight()
+  public int getAssignment1Weight()
   {
-    return um.getUnit(UC).getAsg1Weight();
+    return this.unitManager_.getUnit(this.unitCode_).getAssignment1Weight();
   }
 
 
 
-  public int getAsg2Weight()
+  public int getAssignmentg2Weight()
   {
-    return um.getUnit(UC).getAsg2Weight();
+    return this.unitManager_.getUnit(this.unitCode_).getAssignmentg2Weight();
   }
 
 
 
   public int getExamWeight()
   {
-    return um.getUnit(UC).getExamWeight();
+    return this.unitManager_.getUnit(this.unitCode_).getExamWeight();
   }
 
 
 
-  public void setAssessmentWeights(int asg1Wgt, int asg2Wgt, int examWgt)
+  public void setAssessmentWeights(int assignmentGrade1Weight, int assignmentGrade2Weight, int examWeigt)
   {
-    um.getUnit(UC).setAssessmentWeights(asg1Wgt, asg2Wgt, examWgt);
+	  this.unitManager_.getUnit(this.unitCode_).setAssessmentWeights(assignmentGrade1Weight, assignmentGrade2Weight, examWeigt);
   }
 }

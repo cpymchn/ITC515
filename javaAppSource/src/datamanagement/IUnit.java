@@ -9,35 +9,35 @@ public interface IUnit
 
 
 
-  public float getPsCutoff();
+  public float getPassCutoff();						//Changed method name
 
 
 
-  public void setPsCutoff1(float cutoff);
+  public void setPassCutoff(float cutoff);			//Changed method name
 
 
 
-  public float getCrCutoff();
+  public float getCreditCutoff();					//Changed method name
 
 
 
-  public void setCrCutoff(float cutoff);
+  public void setCreditCutoff(float cutoff);		//Changed method name
 
 
 
-  public float getDiCuttoff();
+  public float getDistinctionCuttoff();				//Changed method name
 
 
 
-  public void setDiCutoff(float cutoff);
+  public void setDistinctionCutoff(float cutoff);	//Changed method name
 
 
 
-  public float getHdCutoff();
+  public float getHighDistinctionCutoff();			//Changed method name
 
 
 
-  public void setHdCutoff(float cutoff);
+  public void setHighDistinctionCutoff(float cutoff);//Changed method name
 
 
 
@@ -49,11 +49,11 @@ public interface IUnit
 
 
 
-  public int getAsg1Weight();
+  public int getAssignment1Weight();				//Changed method name
 
 
 
-  public int getAsg2Weight();
+  public int getAssignmentg2Weight();				//Changed method name
 
 
 
@@ -61,11 +61,11 @@ public interface IUnit
 
 
 
-  public void setAssessmentWeights(int asg1Wgt, int asg2Wgt, int examWgt);
+  public void setAssessmentWeights(int assignmentGrade1Weight, int assignmentGrade2Weight, int examWeigt);//Made integers more readable and change method name
 
 
 
-  public String getGrade(float asg1, float asg2, float exam);
+  public String getGrade(float assignmentGrade1, float assignmentGrade2, float exam); //Made integers more readable
 
 
 

@@ -1,12 +1,12 @@
 package datamanagement;
 public class ListUnitsCTL
 {
-  private UnitManager um;
+  private UnitManager unitManager_;					//	fixed variable names
 
 
 
   public ListUnitsCTL() {
-    um = UnitManager.UM();
+	  this.unitManager_ = UnitManager.UM;					//	fixed variable names 
   }
 
 
@@ -14,9 +14,9 @@ public class ListUnitsCTL
   public void listUnits(IUnitLister lister)
   {
     lister.clearUnits();
-    UnitMap units = um.getUnits();
-    for (String s : units.keySet()) {
-      lister.addUnit(units.get(s));
+    UnitMap units = this.unitManager_.getUnits();					//	fixed variable names
+    for (String unitName : units.keySet()) {					//	fixed variable names
+      lister.addUnit(units.get(unitName));					//	fixed variable names
     }
   }
 }
