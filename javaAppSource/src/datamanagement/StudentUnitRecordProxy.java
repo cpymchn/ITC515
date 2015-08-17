@@ -25,55 +25,55 @@ public class StudentUnitRecordProxy
 
   public String getUnitCode()
   {
-    return this.unitCode;
+    return this.unitCode_;
   }
 
 
 
   public void setAssignmentGrade1(float mark)
   {
-	  this.studentUnitRecordManager_.getStudentUnitRecord(this.studentID, this.unitCode).setAssignment1(mark);
+	  this.studentUnitRecordManager_.getStudentUnitRecord(this.studentID_, this.unitCode_).setAssignmentGrade1(mark);
   }
 
 
 
   public float getAssignmentGrade1()
   {
-    return this.studentUnitRecordManager_.getStudentUnitRecord(this.studentID, this.unitCode).getAssignment1();
+    return this.studentUnitRecordManager_.getStudentUnitRecord(this.studentID_, this.unitCode_).getAssignmentGrade1();
   }
 
 
 
   public void setAssignmentGrade2(float mark)
   {
-	  this.studentUnitRecordManager_.getStudentUnitRecord(this.studentID, this.unitCode).setAssignment2(mark);
+	  this.studentUnitRecordManager_.getStudentUnitRecord(this.studentID_, this.unitCode_).setAssignmentGrade2(mark);
   }
 
 
 
   public float getAssignmentGrade2()
   {
-    return this.studentUnitRecordManager_.getStudentUnitRecord(this.studentID, this.unitCode).getAssignment2();
+    return this.studentUnitRecordManager_.getStudentUnitRecord(this.studentID_, this.unitCode_).getAssignmentGrade2();
   }
 
 
 
   public void setExam(float mark)
   {
-	  this.studentUnitRecordManager_.getStudentUnitRecord(this.studentID, this.unitCode).setExam(mark);
+	  this.studentUnitRecordManager_.getStudentUnitRecord(this.studentID_, this.unitCode_).setExam(mark);
   }
 
 
 
   public float getExam()
   {
-    return this.studentUnitRecordManager_.getStudentUnitRecord(this.studentID, this.unitCode).getExam();
+    return this.studentUnitRecordManager_.getStudentUnitRecord(this.studentID_, this.unitCode_).getExam();
   }
 
 
 
   public float getTotal()
   {
-    return this.studentUnitRecordManager_.getStudentUnitRecord(this.studentID, this.unitCode).getTotal();
+    return this.studentUnitRecordManager_.getStudentUnitRecord(this.studentID_, this.unitCode_).getTotal();
   }
 }

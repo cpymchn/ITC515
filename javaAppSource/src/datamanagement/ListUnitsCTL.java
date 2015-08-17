@@ -6,7 +6,7 @@ public class ListUnitsCTL
 
 
   public ListUnitsCTL() {
-	  this.unitManager_ = UnitManager.UM;					//	fixed variable names 
+	  this.unitManager_ = UnitManager.UM();					//	fixed variable names 
   }
 
 

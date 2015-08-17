@@ -53,7 +53,7 @@ public interface IUnit
 
 
 
-  public int getAssignmentg2Weight();				//Changed method name
+  public int getAssignment2Weight();				//Changed method name
 
 
 

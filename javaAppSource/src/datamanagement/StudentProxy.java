@@ -62,13 +62,13 @@ public class StudentProxy
 
   public IStudentUnitRecord getUnitRecord(String unitCode)
   {
-    return lI.getStudent(I).getUnitRecord(unitCode);
+    return this.studentManager_.getStudent(this.studentID_).getUnitRecord(unitCode);
   }
 
 
 
   public StudentUnitRecordList getUnitRecords()
   {
-    return lI.getStudent(I).getUnitRecords();
+    return this.studentManager_.getStudent(this.studentID_).getUnitRecords();
   }
 }

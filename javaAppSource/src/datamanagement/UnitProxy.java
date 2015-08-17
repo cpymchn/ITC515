@@ -37,7 +37,7 @@ public class UnitProxy
 
 
 
-  public float getCreditCutoff()
+  public float getPassCutoff()
   {
     return this.unitManager_ .getUnit(this.unitCode_).getCreditCutoff();
   }
@@ -53,7 +53,7 @@ public class UnitProxy
 
   public float getCreditCutoff()
   {
-    return um.getUnit(this.unitCode_).getCreditCutoff();
+    return this.unitManager_ .getUnit(this.unitCode_).getCreditCutoff();
   }
 
 
@@ -135,9 +135,9 @@ public class UnitProxy
 
 
 
-  public int getAssignmentg2Weight()
+  public int getAssignment2Weight()
   {
-    return this.unitManager_.getUnit(this.unitCode_).getAssignmentg2Weight();
+    return this.unitManager_.getUnit(this.unitCode_).getAssignment2Weight();
   }
 
 

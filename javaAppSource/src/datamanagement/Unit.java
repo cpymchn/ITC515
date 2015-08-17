@@ -14,8 +14,8 @@ public class Unit
 
 
 
-  public Unit(String untiCode, String unitName, float passCutoff, float creditCutoff, float distinctionCutoff, float highDistinctionCutoff,
-      float f5, int assignment1Weight, int assignment1Weight, int exam, StudentUnitRecordList recordList) {
+  public Unit(String unitCode, String unitName, float passCutoff, float creditCutoff, float distinctionCutoff, float highDistinctionCutoff,
+      float f5, int assignment1Weight, int assignment2Weight, int exam, StudentUnitRecordList recordList) {
 	this.unitCode_ = unitCode;																	//	fixed variable names
 	this.unitName_ = unitName;																	//	fixed variable names
     this.passCutoff_ = passCutoff;																//	fixed variable names
@@ -23,8 +23,8 @@ public class Unit
     this.distinctionCutoff_ = distinctionCutoff;													//	fixed variable names
     this.highDistinctionCutoff_ = highDistinctionCutoff;											//	fixed variable names
     this.co5_ = f5;
-    this.setAssessmentWeights(assignment1Weight, assignment1Weight, exam);						//	fixed variable names
-    this.recordList_ = recordList == null ? new StudentUnitRecordList() : recordList				//	fixed variable names
+    this.setAssessmentWeights(assignment1Weight, assignment2Weight, exam);						//	fixed variable names
+    this.recordList_ = recordList == null ? new StudentUnitRecordList() : recordList;				//	fixed variable names
   }
 
 
@@ -147,7 +147,7 @@ public class Unit
 
 
   @Override
-  public int getAssignmentg2Weight()
+  public int getAssignment2Weight()
   {
     return this.assignment2Weight_;								//	fixed variable names
   }
@@ -182,7 +182,7 @@ public class Unit
   public String getGrade(float assignment1Mark, float assignment2Mark, float exam) //Need to check this LOGIC think I stuffed it when changing variable names
   {
     float totalMark = assignment1Mark + assignment2Mark + exam;
-    if (assignment1Mark < 0 || assignment1Mark > assignment1Weight || assignment2Mark < 0 || assignment2Mark > this.assignment2Weight || exam < 0 || exam > this.exam) {
+    if (assignment1Mark < 0 || assignment1Mark > assignment1Weight_ || assignment2Mark < 0 || assignment2Mark > this.assignment2Weight_ || exam < 0 || exam > this.exam_) {
       throw new RuntimeException(
           "marks cannot be less than zero or greater than assessment weights");
     }

@@ -48,8 +48,8 @@ public class cgCTL
 
   public void studentSelected(Integer studentId) 				//made variable easier to read
   {
-    currentStudentID = studentId;
-    if (currentStudentID.intValue() == 0) {
+    this.currentStudentID_ = studentId;
+    if (this.currentStudentID_.intValue() == 0) {
       CGUI.Refresh3();
       CGUI.setState3(false);
       CGUI.setState4(false);
@@ -58,7 +58,7 @@ public class cgCTL
     } 
     else {
       IStudent student = StudentManager.get().getStudent(studentId);	//made variable easier to read
-      IStudentUnitRecord record = student.getUnitRecord(cuc);			//made variable easier to read
+      IStudentUnitRecord record = student.getUnitRecord(this.cuc_);			//made variable easier to read
       CGUI.setRecord(record);											//made variable easier to read
       CGUI.setState3(true);
       CGUI.setState4(true);
@@ -72,11 +72,11 @@ public class cgCTL
 
   public String checkGrade(float f, float g, float h)			//these can be made easier
   {
-    IUnit unit = UnitManager.UM().getUnit(cuc);					//made variable easier to read
-    String grade = u.getGrade(f, g, h);							//made variable easier to read
+    IUnit unit = UnitManager.UM().getUnit(this.cuc_);					//made variable easier to read
+    String grade = unit.getGrade(f, g, h);							//made variable easier to read
     CGUI.setState4(true);
     CGUI.setState5(false);
-    if (changed) {
+    if (this.changed_) {
       CGUI.setState6(true);
     }
     return grade;
@@ -96,7 +96,7 @@ public class cgCTL
 
   public void saveGrade(float assignmentGrade1, float assignmentGrade2, float exam)//made variable easier to read
   {
-    IStudent student = StudentManager.get().getStudent(currentStudentID);	//made variable easier to read
+    IStudent student = StudentManager.get().getStudent(this.currentStudentID_);	//made variable easier to read
     IStudentUnitRecord record = student.getUnitRecord(this.cuc_);					//made variable easier to read
     record.setAssignmentGrade1(assignmentGrade1);											//made variable easier to read
     record.setAssignmentGrade2(assignmentGrade2);											//made variable easier to read

@@ -9,7 +9,7 @@ public class Student
 
 
 
-  public Student(Integer studentID, String fn, String lastName, StudentUnitRecordList studentRecordUnitList) {
+  public Student(Integer studentID, String firstName, String lastName, StudentUnitRecordList studentRecordUnitList) {
     this.studentID_ = studentID;     // change variable name
     this.firstName_ = firstName;     // change variable name
     this.lastName_ = lastName;     // change variable name

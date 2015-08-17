@@ -35,7 +35,7 @@ public class StudentUnitRecord
 
   public void setAssignmentGrade1(float assignmentGrade1)											//Fixed method name	and variable names	
   {
-    if (assignmentGrade1 < 0 || assignmentGrade1 > UnitManager.UM().getUnit(unitCode).getAssignmentGrade1Weight()) {
+    if (assignmentGrade1 < 0 || assignmentGrade1 > UnitManager.UM().getUnit(this.unitCode_).getAssignment1Weight()) {
       throw new RuntimeException(
           "Mark cannot be less than zero or greater than assessment weight");
     }
@@ -53,7 +53,7 @@ public class StudentUnitRecord
 
   public void setAssignmentGrade2(float assignmentGrade2)											//Fixed method name	and variable names						
   {
-    if (assignmentGrade2 < 0 || assignmentGrade2 > UnitManager.UM().getUnit(unitCode).getAssignmentGrade2Weight()) {	//	fixed variable names
+    if (assignmentGrade2 < 0 || assignmentGrade2 > UnitManager.UM().getUnit(this.unitCode_).getAssignment2Weight()) {	//	fixed variable names
       throw new RuntimeException(
           "Mark cannot be less than zero or greater than assessment weight");
     }
@@ -71,7 +71,7 @@ public class StudentUnitRecord
 
   public void setExam(float exam)														//	fixed variable names	
   {
-    if (exam < 0 || exam > UnitManager.UM().getUnit(unitCode).getExamWeight()) {
+    if (exam < 0 || exam > UnitManager.UM().getUnit(this.unitCode_).getExamWeight()) {
       throw new RuntimeException(
           "Mark cannot be less than zero or greater than assessment weight");
     }

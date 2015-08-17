@@ -27,7 +27,7 @@ public class StudentManager
 
   public IStudent getStudent(Integer id)
   {
-    IStudent is = this.hashMap_.get(id);
+    IStudent is = this.studentMap_.get(id);
     return is != null ? is : createStudent(id);
   }
 
@@ -55,7 +55,7 @@ public class StudentManager
           .getRecordsByStudent(id);
       is = new Student(new Integer(el.getAttributeValue("sid")),
           el.getAttributeValue("fname"), el.getAttributeValue("lname"), rlist);
-      sm.put(is.getID(), is);
+      this.studentMap_.put(is.getID(), is);
       return is;
     }
     throw new RuntimeException("DBMD: createStudent : student not in file");
