@@ -31,7 +31,7 @@ public class cgCTL
 
 
 
-  public void unitSelected(String unitCode)						//made variable easier to read
+  public void unitSelected(String unitCode)
   {
     if (unitCode.equals("NONE"))
       CGUI.setState2(false);
@@ -46,7 +46,7 @@ public class cgCTL
 
 
 
-  public void studentSelected(Integer studentId) 				//made variable easier to read
+  public void studentSelected(Integer studentId)
   {
     this.currentStudentID_ = studentId;
     if (this.currentStudentID_.intValue() == 0) {
@@ -57,9 +57,9 @@ public class cgCTL
       CGUI.setState6(false);
     } 
     else {
-      IStudent student = StudentManager.get().getStudent(studentId);	//made variable easier to read
-      IStudentUnitRecord record = student.getUnitRecord(this.cuc_);			//made variable easier to read
-      CGUI.setRecord(record);											//made variable easier to read
+      IStudent student = StudentManager.get().getStudent(studentId);
+      IStudentUnitRecord record = student.getUnitRecord(this.cuc_);
+      CGUI.setRecord(record);
       CGUI.setState3(true);
       CGUI.setState4(true);
       CGUI.setState5(false);
@@ -72,8 +72,8 @@ public class cgCTL
 
   public String checkGrade(float f, float g, float h)			//these can be made easier
   {
-    IUnit unit = UnitManager.UM().getUnit(this.cuc_);					//made variable easier to read
-    String grade = unit.getGrade(f, g, h);							//made variable easier to read
+    IUnit unit = UnitManager.UM().getUnit(this.cuc_);
+    String grade = unit.getGrade(f, g, h);
     CGUI.setState4(true);
     CGUI.setState5(false);
     if (this.changed_) {
@@ -94,14 +94,14 @@ public class cgCTL
 
 
 
-  public void saveGrade(float assignmentGrade1, float assignmentGrade2, float exam)//made variable easier to read
+  public void saveGrade(float assignmentGrade1, float assignmentGrade2, float exam)
   {
-    IStudent student = StudentManager.get().getStudent(this.currentStudentID_);	//made variable easier to read
-    IStudentUnitRecord record = student.getUnitRecord(this.cuc_);					//made variable easier to read
-    record.setAssignmentGrade1(assignmentGrade1);											//made variable easier to read
-    record.setAssignmentGrade2(assignmentGrade2);											//made variable easier to read
+    IStudent student = StudentManager.get().getStudent(this.currentStudentID_);
+    IStudentUnitRecord record = student.getUnitRecord(this.cuc_);
+    record.setAssignmentGrade1(assignmentGrade1);
+    record.setAssignmentGrade2(assignmentGrade2);
     record.setExam(exam);
-    StudentUnitRecordManager.instance().saveRecord(record);					//made variable easier to read
+    StudentUnitRecordManager.instance().saveRecord(record);
     CGUI.setState4(true);
     CGUI.setState5(false);
     CGUI.setState6(false);

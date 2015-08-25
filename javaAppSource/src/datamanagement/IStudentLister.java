@@ -1,7 +1,4 @@
 package datamanagement;
-/**
- * @author jtulip
- */
 public interface IStudentLister
 {
   public void clearStudents();

@@ -16,92 +16,92 @@ public class Unit
 
   public Unit(String unitCode, String unitName, float passCutoff, float creditCutoff, float distinctionCutoff, float highDistinctionCutoff,
       float f5, int assignment1Weight, int assignment2Weight, int exam, StudentUnitRecordList recordList) {
-	this.unitCode_ = unitCode;																	//	fixed variable names
-	this.unitName_ = unitName;																	//	fixed variable names
-    this.passCutoff_ = passCutoff;																//	fixed variable names
-    this.creditCutoff_ = creditCutoff;															//	fixed variable names
-    this.distinctionCutoff_ = distinctionCutoff;													//	fixed variable names
-    this.highDistinctionCutoff_ = highDistinctionCutoff;											//	fixed variable names
+	this.unitCode_ = unitCode;
+	this.unitName_ = unitName;
+    this.passCutoff_ = passCutoff;
+    this.creditCutoff_ = creditCutoff;
+    this.distinctionCutoff_ = distinctionCutoff;
+    this.highDistinctionCutoff_ = highDistinctionCutoff;
     this.co5_ = f5;
-    this.setAssessmentWeights(assignment1Weight, assignment2Weight, exam);						//	fixed variable names
-    this.recordList_ = recordList == null ? new StudentUnitRecordList() : recordList;				//	fixed variable names
+    this.setAssessmentWeights(assignment1Weight, assignment2Weight, exam);
+    this.recordList_ = recordList == null ? new StudentUnitRecordList() : recordList;
   }
 
 
 
   public String getUnitCode()
   {
-    return this.unitCode_;																					//	fixed variable names
+    return this.unitCode_;	
   }
 
 
 
   public String getUnitName()
   {
-    return this.unitName_;																//	fixed variable names
+    return this.unitName_;
   }
 
 
 
   public void setPassCutoff(float cutoff)
   {
-    this.passCutoff_ = cutoff;																//	fixed variable names
+    this.passCutoff_ = cutoff;
   }
 
 
 
   public float getPassCutoff()
   {
-    return this.passCutoff_;																//	fixed variable names
+    return this.passCutoff_;
   }
 
 
 
   public void setCreditCutoff(float cutoff)
   {
-    this.creditCutoff_ = cutoff;																//	fixed variable names
+    this.creditCutoff_ = cutoff;
   }
 
 
 
   public float getCreditCutoff()
   {
-    return this.creditCutoff_;																//	fixed variable names
+    return this.creditCutoff_;
   }
 
 
 
   public void setDistinctionCutoff(float cutoff)
   {
-    this.distinctionCutoff_ = cutoff;																//	fixed variable names
+    this.distinctionCutoff_ = cutoff;
   }
 
 
 
   public float getDistinctionCuttoff()
   {
-    return this.distinctionCutoff_;																//	fixed variable names
+    return this.distinctionCutoff_;
   }
 
 
 
   public void setHighDistinctionCutoff(float cutoff)
   {
-    this.highDistinctionCutoff_ = cutoff;																//	fixed variable names
+    this.highDistinctionCutoff_ = cutoff;
   }
 
 
 
   public float getHighDistinctionCutoff()
   {
-    return this.highDistinctionCutoff_;																//	fixed variable names
+    return this.highDistinctionCutoff_;	
   }
 
 
 
   public void setAeCutoff(float cutoff)
   {
-    this.co5_ = cutoff;																//	to do
+    this.co5_ = cutoff;
   }
 
 
@@ -115,25 +115,25 @@ public class Unit
 
   public void addStudentRecord(IStudentUnitRecord record)
   {
-	  this.recordList_.add(record);									//	fixed variable names
+	  this.recordList_.add(record);
   }
 
 
 
-  public IStudentUnitRecord getStudentRecord(int studentID)								//	fixed variable names
+  public IStudentUnitRecord getStudentRecord(int studentID)
   {
-    for (IStudentUnitRecord record : this.recordList_) {								//	fixed variable names
-      if (record.getStudentID() == studentID)								//	fixed variable names
-        return record;								//	fixed variable names
+    for (IStudentUnitRecord record : this.recordList_) {
+      if (record.getStudentID() == studentID)
+        return record;
     }
     return null;
   }
 
 
 
-  public StudentUnitRecordList listStudentRecords()								//	fixed variable names
+  public StudentUnitRecordList listStudentRecords()
   {
-    return this.recordList_;								//	fixed variable names
+    return this.recordList_;
   }
 
 
@@ -141,7 +141,7 @@ public class Unit
   @Override
   public int getAssignment1Weight()
   {
-    return this.assignment1Weight_;								//	fixed variable names
+    return this.assignment1Weight_;
   }
 
 
@@ -149,7 +149,7 @@ public class Unit
   @Override
   public int getAssignment2Weight()
   {
-    return this.assignment2Weight_;								//	fixed variable names
+    return this.assignment2Weight_;
   }
 
 
@@ -157,29 +157,29 @@ public class Unit
   @Override
   public int getExamWeight()
   {
-    return this.exam_;								//	fixed variable names
+    return this.exam_;
   }
 
 
 
   @Override
-  public void setAssessmentWeights(int assignment1Weight, int assignment2Weight, int exam)								//	fixed variable names
+  public void setAssessmentWeights(int assignment1Weight, int assignment2Weight, int exam)
   {
-    if (assignment1Weight < 0 || assignment1Weight > 100 || assignment2Weight < 0 || assignment2Weight > 100 || exam < 0 || exam > 100) {								//	fixed variable names
+    if (assignment1Weight < 0 || assignment1Weight > 100 || assignment2Weight < 0 || assignment2Weight > 100 || exam < 0 || exam > 100) {
       throw new RuntimeException(
           "Assessment weights cant be less than zero or greater than 100");
     }
-    if (assignment1Weight + assignment2Weight + exam != 100) {								//	fixed variable names
+    if (assignment1Weight + assignment2Weight + exam != 100) {
       throw new RuntimeException("Assessment weights must add to 100");
     }
-    this.assignment1Weight_ = assignment1Weight;								//	fixed variable names
-    this.assignment2Weight_ = assignment2Weight;								//	fixed variable names
-    this.exam_ = exam;								//	fixed variable names
+    this.assignment1Weight_ = assignment1Weight;
+    this.assignment2Weight_ = assignment2Weight;
+    this.exam_ = exam;
   }
 
 
 
-  public String getGrade(float assignment1Mark, float assignment2Mark, float exam) //Need to check this LOGIC think I stuffed it when changing variable names
+  public String getGrade(float assignment1Mark, float assignment2Mark, float exam) // Need to check this LOGIC think I stuffed it when changing variable names
   {
     float totalMark = assignment1Mark + assignment2Mark + exam;
     if (assignment1Mark < 0 || assignment1Mark > assignment1Weight_ || assignment2Mark < 0 || assignment2Mark > this.assignment2Weight_ || exam < 0 || exam > this.exam_) {
@@ -189,13 +189,13 @@ public class Unit
     if (totalMark < co5_) {
       return "FL";
     }
-    else if (totalMark < this.passCutoff_)								//	fixed variable names
+    else if (totalMark < this.passCutoff_)
       return "AE";
-    else if (totalMark < this.creditCutoff_)								//	fixed variable names
+    else if (totalMark < this.creditCutoff_)
       return "PS";
-    else if (totalMark < this.distinctionCutoff_)								//	fixed variable names
+    else if (totalMark < this.distinctionCutoff_)
       return "CR";
-    else if (totalMark < this.highDistinctionCutoff_)								//	fixed variable names
+    else if (totalMark < this.highDistinctionCutoff_)
       return "DI";
     else
       return "HD";

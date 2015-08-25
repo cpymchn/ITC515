@@ -9,35 +9,35 @@ public interface IUnit
 
 
 
-  public float getPassCutoff();						//Changed method name
+  public float getPassCutoff();	
 
 
 
-  public void setPassCutoff(float cutoff);			//Changed method name
+  public void setPassCutoff(float cutoff);
 
 
 
-  public float getCreditCutoff();					//Changed method name
+  public float getCreditCutoff();
 
 
 
-  public void setCreditCutoff(float cutoff);		//Changed method name
+  public void setCreditCutoff(float cutoff);
 
 
 
-  public float getDistinctionCuttoff();				//Changed method name
+  public float getDistinctionCuttoff();
 
 
 
-  public void setDistinctionCutoff(float cutoff);	//Changed method name
+  public void setDistinctionCutoff(float cutoff);
 
 
 
-  public float getHighDistinctionCutoff();			//Changed method name
+  public float getHighDistinctionCutoff();
 
 
 
-  public void setHighDistinctionCutoff(float cutoff);//Changed method name
+  public void setHighDistinctionCutoff(float cutoff);
 
 
 
@@ -49,11 +49,11 @@ public interface IUnit
 
 
 
-  public int getAssignment1Weight();				//Changed method name
+  public int getAssignment1Weight();
 
 
 
-  public int getAssignment2Weight();				//Changed method name
+  public int getAssignment2Weight();
 
 
 
@@ -61,11 +61,11 @@ public interface IUnit
 
 
 
-  public void setAssessmentWeights(int assignmentGrade1Weight, int assignmentGrade2Weight, int examWeigt);//Made integers more readable and change method name
+  public void setAssessmentWeights(int assignmentGrade1Weight, int assignmentGrade2Weight, int examWeigt);
 
 
 
-  public String getGrade(float assignmentGrade1, float assignmentGrade2, float exam); //Made integers more readable
+  public String getGrade(float assignmentGrade1, float assignmentGrade2, float exam);
 
 
 
